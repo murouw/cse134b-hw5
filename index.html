@@ -39,6 +39,20 @@
       </header>
     </section>
 
+    <hello-world></hello-world>
+
+    <script>
+        class HelloWorld extends HTMLElement {
+            constructor() {
+                super(); // Call the parent constructor
+                console.log("Hello world!");
+            }
+        }
+
+        // Define the custom element
+        customElements.define("hello-world", HelloWorld);
+    </script>
+
     <dialog open>
       <p>
         Hi! You've opened my portfolio page! Please press <kbd>Ctrl</kbd> +

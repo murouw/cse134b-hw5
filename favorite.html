@@ -3,6 +3,35 @@
     <meta charset="UTF-8" />
     <title>Murou Wang | Favorites</title>
     <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+
+    <style>
+      my-tier {
+        border-radius: 50%;
+        font-weight: bold;
+        font-size: x-large;
+        text-align: justify;
+        margin: 10px;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: black;
+      }
+
+      my-tier[level="S"] {
+        background-color: #e2888a; 
+      }
+
+      my-tier[level="A"] {
+        background-color: #deaa75;
+      }
+
+      my-tier[level="B"] {
+        background-color: #d2c474; 
+      }
+    </style>
   </head>
 
   <body>
@@ -11,7 +40,64 @@
         <h1>Murou's Favorites</h1>
       </header>
 
-      <section></section>
+      <template id="favoriteRow">
+        <dt class="favoriteTitle"></dt>
+        <dd class="media"></dd>
+          <dd class="favoriteDescription"></dd>
+      </template>
+
+      <section>
+        <dl>
+          <dt><h3>Meme</h3> <my-tier level='S'>S</my-tier></dt>
+          
+          <dd>
+            <picture>
+                <source srcset="images/chedda.png" media="(orientation: portrait)" />
+                <img src="images/chedda.png" alt="" width="200" />
+              </picture>
+          </dd>
+          
+          
+          <dd><dfn id="def-chedda">Mista Chedda</dfn> is AI generated but real in my heart. </dd> 
+
+          <dt><h3>Video</h3></dt><my-tier level='A'>A</my-tier></dt>
+          <dd>
+            <video controls width="250">
+              
+                <source src="media/Dinero - Ahhhh - Weird Puppet Screaming - Meme Source 144.mp4" type="video/mp4" />
+
+                video.
+              </video>
+          <dd>This strange video from Vine, if anyone remembers that.</dd>
+
+          <dt><h3>Coffee Shop</h3></dt><my-tier level='A'>A</my-tier></dt>
+          <dd>
+            <iframe width="250" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3355.6858884855856!2d-117.13206588939742!3d32.74753047356616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d955ae22ebbc19%3A0xacd6c9169a5e3bb0!2sLovesong%20Coffee%20%2B%20Market!5e0!3m2!1sen!2sus!4v1738559935793!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <dd>Highly recommend Evergreen, the mint matcha</dd>
+
+          <dt><h3>Sound</h3><my-tier level='A'>A</my-tier></dt>
+          <dd><audio controls src="media/spotifydown.com - Soft Spot - keshi.mp3"></audio></dd>
+          <dd>Soft Spot by Keshi has been on repeat!</dd>
+
+          <dt><h3>Color</h3></dt><my-tier level='S'>S</my-tier></dt>
+          <dd><canvas id="myCanvas" width="300" height="300"></canvas>
+
+            <script>
+                const canvas = document.getElementById("myCanvas");
+                const ctx = canvas.getContext("2d");
+                ctx.beginPath();        
+                ctx.arc(150, 150, 50, 0, Math.PI * 2); 
+                ctx.fillStyle = "#226C3B"; 
+                ctx.fill();              
+                ctx.closePath();        
+            </script></dd>
+            <dd>Don't you feel relaxed? See how much better it is compared to this <span>
+                <svg width="50" height="50">
+                    <circle cx="25" cy="25" r="20" fill="green" />
+                </svg>
+            </span> circle with default green.</dd>
+        </dl>
+      </section>
 
       <section>
         <h2>Choose Your Favorite Favorite</h2>
@@ -34,8 +120,8 @@
             <input type="radio" id="Sound" name="favorite" value="Sound" />
             <label for="Sound">Sound</label><br />
 
-            <input type="radio" id="Website" name="favorite" value="Website" />
-            <label for="Website">Website</label>
+            <input type="radio" id="Color" name="favorite" value="Color" />
+            <label for="Website">Color</label>
           </fieldset>
           <br />
 
@@ -48,7 +134,7 @@
               <option value="Sound">Sound</option>
             </optgroup>
 
-            <option value="Website">Website</option></select
+            <option value="Color">Color</option></select
           ><br />
 
           <label for="reason">Why did you choose this favorite?</label><br />
