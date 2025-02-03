@@ -40,6 +40,15 @@
         <h1>Murou's Favorites</h1>
       </header>
 
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="media/MurouWangResume.pdf">Resume</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="experiment.html">Experiments</a></li>
+        </ul>
+      </nav>
+
       <template id="favoriteRow">
         <dt class="favoriteTitle"></dt>
         <dd class="media"></dd>
@@ -117,6 +126,9 @@
             <input type="radio" id="Video" name="favorite" value="Video" />
             <label for="Video">Video</label><br />
 
+            <input type="radio" id="CoffeeShop" name="favorite" value="CoffeeShop" />
+            <label for="CoffeeShop">Coffee Shop</label><br />
+
             <input type="radio" id="Sound" name="favorite" value="Sound" />
             <label for="Sound">Sound</label><br />
 
@@ -125,12 +137,13 @@
           </fieldset>
           <br />
 
-          <label for="favorite">Which favorite would you choose?</label><br />
+          <label for="favorite">Which favorite would you like to see more of?</label><br />
           <select id="favorite" name="favorite" required>
             <option value="">--Please choose an option--</option>
             <option value="Meme">Meme</option>
             <optgroup label="Non-static">
               <option value="Video">Video</option>
+              <option value="CoffeeShop">Coffee Shop</option>
               <option value="Sound">Sound</option>
             </optgroup>
 
@@ -149,7 +162,7 @@
           ></textarea>
           <br />
 
-          <label for="fav-choice">What would you like to see next?</label>
+          <label for="fav-choice">What other categories would you like to see next?</label>
           <input list="fav-list" id="fav-choice" name="fav-choice" />
 
           <datalist id="fav-list">
