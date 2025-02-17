@@ -94,7 +94,7 @@ nav img {
 
 header p {
   animation-name: green;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-timing-function: linear;
@@ -179,3 +179,67 @@ h2 {
     font-size: large;
     margin: 0;
 }
+
+.menu {
+    display: flex;
+    gap: 20px;
+  }
+
+  .navItem {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  /* Hamburger menu button (hidden by default) */
+  #menu-btn {
+    display: none;
+  }
+
+  .menu-icon {
+    display: none; /* Hide by default */
+    cursor: pointer;
+  }
+
+  .navicon {
+    width: 30px;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: var(--green);
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .menu a {
+      padding: 10px;
+      display: block;
+      text-align: center;
+      font-size: xx-large;
+    }
+
+    .menu-icon {
+      display: block; /* Show menu icon on small screens */
+    }
+
+    /* Show menu when checkbox is checked */
+    #menu-btn:checked ~ .menu {
+      display: flex;
+    }
+
+    .menu-icon {
+        margin-right: 1rem;
+    }
+
+    .contactLogo {
+        width: 10dvw;
+        padding: 5px;
+    }
+  }

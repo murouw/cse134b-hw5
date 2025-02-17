@@ -20,6 +20,8 @@
     />
     <meta property="og:url" content="https://murou.netlify.app/" />
     <meta property="og:type" content="website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
     <title>Murou Wang</title>
     <link rel="icon" href="images/chedda.png" type="image/x-icon" />
@@ -38,10 +40,16 @@
     </noscript>
 
     <nav>
-      <a href="index.html" class="navItem"
-        ><img src="images/chedda.png" alt="Mista Chedda"
-      /></a>
-      <div>
+      <a href="index.html" class="navItem">
+        <img src="images/chedda.png" alt="Mista Chedda" />
+      </a>
+    
+      <input type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn">
+        <img class="navicon" src="images/menu.png" alt="Hamburger Menu Button" />
+      </label>
+    
+      <div class="menu">
         <a class="navItem" href="media/MurouWangResume.pdf">resume</a>
         <a class="navItem" href="portfolio.html">portfolio</a>
       </div>
@@ -58,7 +66,11 @@
 
     <main>
       <figure>
-        <img src="images/cat.gif" alt="Tuxedo cat typing furiously on Mac" />
+        <picture>
+          <source srcset="images/small-cat.png" media="(max-width: 600px)">
+          <img src="images/cat.gif" loading="lazy" alt="Tuxedo cat typing furiously on Mac" />
+        </picture>
+       
         <figcaption>me, coding studiously ^</figcaption>
       </figure>
 
@@ -66,21 +78,24 @@
       <div class="contact">
         <a href="https://www.linkedin.com/in/murouw/"
           ><img
+          loading="lazy"
             class="contactLogo"
             src="images/linkedin-with-circle-icon-512x512-cvyrro5n.png"
             alt="LinkedIn"
         /></a>
         <a href="https://github.com/murouw"
-          ><img class="contactLogo"src="images/25231.png" alt="Github"
+          ><img loading="lazy" class="contactLogo"src="images/25231.png" alt="Github"
         /></a>
         <a href="https://www.instagram.com/murouw.jpeg/"
           ><img
+          loading="lazy"
           class="contactLogo"
             src="images/instagram-with-circle-icon-2048x2048-21sdb59c.png"
             alt="Instagram"
         /></a>
         <a href="mailto:murouaiwang@gmail.com?subject=What's Up?"
           ><img
+          loading="lazy"
           class="contactLogo"
             src="images/95627.png"
             alt="murouaiwang@gmail.com"
