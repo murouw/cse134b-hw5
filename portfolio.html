@@ -1,65 +1,115 @@
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>Murou Wang | Resume</title>
-        <link rel="icon" href="images/favicon.png" type="image/x-icon" />
-      </head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Murou Wang | Portfolio</title>
+    <link rel="icon" href="images/chedda.png" type="image/x-icon" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-      <body>
-        <h1>Portfolio</h1>
+  <body>
+    <nav>
+      <a href="index.html" class="navItem"
+        ><img src="images/chedda.png" alt="Mista Chedda"
+      /></a>
+      <div style="margin-right: 2%;">
+        <a class="navItem" href="media/MurouWangResume.pdf">resume</a>
+        <a class="navItem" href="portfolio.html">portfolio</a>
+      </div>
+    </nav>
 
-        <nav>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="media/MurouWangResume.pdf">Resume</a></li>
-              <li><a href="portfolio.html">Portfolio</a></li>
-              <li><a href="experiment.html">Experiments</a></li>
-            </ul>
-          </nav>
-          
-        <search>
-            <form action="./search/">
-            <label for="project">Find a Project</label>
-            <input type="search" id="project" name="q" />
-            <button type="submit">Search</button>
-            </form>
-        </search>
+    <header>
+      <hgroup style="text-align: center">
+        <h1 style="font-size: 72px; margin-bottom: 0">portfolio</h1>
+        <p style="font-size: 36px; margin-top: 0.2em">
+          a collection of the works I'm proudest of
+        </p>
+      </hgroup>
+    </header>
 
-          <table>
-            <caption>
-              Projects
-            </caption>
-            <colgroup>
-              <col />
-              <col span="2" class="school" />
-              <col span="2" class="individual" />
-            </colgroup>
-            <tr>
-              <td></td>
-              <th scope="col">One</th>
-              <th scope="col">Two</th>
-              <th scope="col">Three</th>
-              <th scope="col">Four</th>
-            </tr>
-            <tr>
-              <th scope="row"></th>
-              <td><details>
-                <summary>Details</summary>
-                Something small enough to escape casual notice.
-              </details></li></td>
-              <td><details>
-                <summary>Details</summary>
-                Something small enough to escape casual notice.
-              </details></li></td>
-              <td><details>
-                <summary>Details</summary>
-                Something small enough to escape casual notice.
-              </details></li></td>
-              <td><details>
-                <summary>Details</summary>
-                Something small enough to escape casual notice.
-              </details></li></td>
-            </tr>
-          </table>
-      </body>
+    <main class="portfolio">
+      <div class="portfolioItem">
+        <a href="https://murou3.netlify.app/"
+          ><img
+            class="portfolioImage"
+            src="images/inception.png"
+            alt="Home page of this website"
+        /></a>
+
+        <div class="portfolioItemTitle">
+          <strong>This website!</strong>
+          <em>Feb 2025</em>
+        </div>
+
+        <p>
+          This website is my project for CSE 134B, although hopefully I'll be
+          using it as my actual portfolio soon :D
+        </p>
+      </div>
+
+      <div class="portfolioItem">
+        <a href="https://devpost.com/software/soupersaurus"
+          ><img
+            class="portfolioImage"
+            src="images/soupasaurus.png"
+            alt="Mobile game Soupasaurus"
+        /></a>
+
+        <div class="portfolioItemTitle">
+          <strong>Soupasaurus</strong>
+          <em>April 2024</em>
+        </div>
+
+        <p>
+          A personality quiz and dinosaurus adventure game in one
+          created with friends at LA Hacks 2024.
+        </p>
+      </div>
+
+      <div class="portfolioItem">
+        <a href="https://github.com/murouw/cultivate"
+          ><img
+            class="portfolioImage"
+            src="images/cultivate.png"
+            alt="Cultivate landing page"
+        /></a>
+
+        <div class="portfolioItemTitle">
+          <strong>Cultivate</strong>
+          <em>Feb 2024</em>
+        </div>
+
+        <p>
+          Gamified gratitude journal made with friends as part of an ACM project.
+        </p>
+      </div>
+
+      <div class="portfolioItem">
+        <a href="https://github.com/murouw/ersp"
+          ><img
+            class="portfolioImage"
+            src="images/ersp.png"
+            alt="ERSP research presentation poster"
+        /></a>
+
+        <div class="portfolioItemTitle">
+          <strong>ERSP at UCSD</strong>
+          <em>June 2024</em>
+        </div>
+
+        <p>
+          Research on LLM vulnerabilities under Professor Earlence Fernandes at UCSD. 
+        </p>
+      </div>
+
+      <div class="portfolioItem">
+        <h1>...And more to come!</h1>
+      </div>
+    </main>
+  </body>
 </html>

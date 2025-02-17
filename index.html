@@ -22,110 +22,70 @@
     <meta property="og:type" content="website" />
 
     <title>Murou Wang</title>
-    <link rel="icon" href="images/favicon.png" type="image/x-icon" />
-    <style>
-      body {
-        border-style: solid;
-      }
-    </style>
+    <link rel="icon" href="images/chedda.png" type="image/x-icon" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <noscript>
       Whoops! Looks like JavaScript isn't enabled. This website is ok without
       scripts but you should definitely enable scripts for the best experience!
     </noscript>
-    <section>
-      <header>
-        <div>
-          <hgroup>
-            <h1>Murou Wang</h1>
-            <p>Computer Science Student at UCSD</p>
-          </hgroup>
-        </div>
-      </header>
-    </section>
-
-    <hello-world></hello-world>
-
-    <script>
-      class HelloWorld extends HTMLElement {
-        constructor() {
-          super(); // Call the parent constructor
-          console.log("Hello world!");
-        }
-      }
-
-      // Define the custom element
-      customElements.define("hello-world", HelloWorld);
-    </script>
-
-    <dialog open>
-      <p>
-        Hi! You've opened my portfolio page! Please press <kbd>Ctrl</kbd> +
-        <kbd>Shift</kbd> + <kbd>R</kbd> if you close this and want to see it
-        again
-      </p>
-      <form method="dialog">
-        <button>Let's see all the magic</button>
-      </form>
-    </dialog>
 
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="media/MurouWangResume.pdf">Resume</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="experiment.html">Experiments</a></li>
-      </ul>
+      <a href="index.html" class="navItem"
+        ><img src="images/chedda.png" alt="Mista Chedda"
+      /></a>
+      <div>
+        <a class="navItem" href="media/MurouWangResume.pdf">resume</a>
+        <a class="navItem" href="portfolio.html">portfolio</a>
+      </div>
     </nav>
+
+    <header>
+      <hgroup style="text-align: center">
+        <h1 style="font-size: 72px; margin-bottom: 0">murou wang</h1>
+        <p style="font-size: 36px; margin-top: 0.2em">
+          computer science student at UCSD
+        </p>
+      </hgroup>
+    </header>
 
     <main>
       <figure>
-        <img
-          src="images/favicon.png"
-          alt="This website's favicon"
-          width="200"
-        />
-        <figcaption>
-          <blockquote>
-            "<i>No</i>, I'm a <b>star</b>! Please, I'm a <em>star</em>!"
-            <br />
-            <cite>- Pearl (Mia Goth) in Pearl (2022)</cite>
-          </blockquote>
-        </figcaption>
+        <img src="images/cat.gif" alt="Tuxedo cat typing furiously on Mac" />
+        <figcaption>me, coding studiously ^</figcaption>
       </figure>
 
-      <hr />
-
-      <p>
-        <span
-          >This is my personal portfolio
-          <del>for the purposes of CSE 134B projects</del>
-          <ins>that I'll use for everything</ins>.</span
-        >
-      </p>
-
-      <aside>
-        <p>Currently a work in progress!</p>
-      </aside>
-
-      <article id="contact">
-        <h2>Contact Me</h2>
-
-        <p><strong>Say hi! </strong></p>
-
-        <ol>
-          <li><a href="media/MurouWangResume.pdf">LinkedIn</a></li>
-          <li><a href="portfolio.html">Github</a></li>
-          <li>
-            <a href="#ctr"><abbr title="Instagram">Insta</abbr></a>
-          </li>
-        </ol>
-      </article>
-
-      <form action="favorite.html">
-        <input type="submit" value="Don't Click Me ;D" />
-      </form>
+      <h2>contact me</h2>
+      <div class="contact">
+        <a href="https://www.linkedin.com/in/murouw/"
+          ><img
+            class="contactLogo"
+            src="images/linkedin-with-circle-icon-512x512-cvyrro5n.png"
+            alt="LinkedIn"
+        /></a>
+        <a href="https://github.com/murouw"
+          ><img class="contactLogo"src="images/25231.png" alt="Github"
+        /></a>
+        <a href="https://www.instagram.com/murouw.jpeg/"
+          ><img
+          class="contactLogo"
+            src="images/instagram-with-circle-icon-2048x2048-21sdb59c.png"
+            alt="Instagram"
+        /></a>
+        <a href="mailto:murouaiwang@gmail.com?subject=What's Up?"
+          ><img
+          class="contactLogo"
+            src="images/95627.png"
+            alt="murouaiwang@gmail.com"
+        /></a>
+      </div>
     </main>
   </body>
 </html>
