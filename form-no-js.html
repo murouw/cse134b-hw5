@@ -112,114 +112,12 @@
         /></a>
       </div>
 
-      <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          const nameInput = document.getElementById("name");
-          const emailInput = document.getElementById("email");
-          const textarea = document.getElementById("comment");
-
-          const errorOutput = document.querySelector("output[name='error']");
-          const form = document.getElementById("myForm");
-          const errorField = document.getElementById("form-errors");
-          let form_errors = [];
-
-          function triggerFlash(element) {
-            element.classList.add("error-flash");
-            element.classList.remove("error-flash");
-            setTimeout(() => element.classList.add("error-flash"), 10);
-          }
-
-          function triggerError(message) {
-            errorOutput.textContent = message;
-            errorOutput.style.opacity = "1";
-
-            setTimeout(() => {
-              errorOutput.style.opacity = "0";
-            }, 2000);
-          }
-
-          function logError(field, message) {
-            form_errors.push({
-              field,
-              message,
-            });
-            triggerFlash(document.getElementById(field));
-            triggerError(message);
-
-            console.log(form_errors);
-            errorField.value = form_errors;
-          }
-
-          const allowedPattern = /^[a-zA-Z0-9äöüÄÖÜ]*$/;
-          nameInput.addEventListener("input", function (event) {
-            const value = nameInput.value;
-            const lastChar = value.charAt(value.length - 1);
-
-            if (!allowedPattern.test(value)) {
-              // Remove the last character if it's invalid
-              nameInput.value = value.slice(0, -1);
-
-              errorMessage = `Invalid character typed in 'name' field: '${lastChar}'`;
-              logError("name", errorMessage);
-            }
-          });
-
-          emailInput.addEventListener("blur", function () {
-            if (!emailInput.checkValidity() && emailInput.value.trim() !== "") {
-              errorMessage = "Invalid email format";
-              logError("email", errorMessage);
-            }
-          });
-
-          const charCount = document.getElementById("charCount");
-          const maxLength = parseInt(textarea.getAttribute("maxlength"), 10);
-          textarea.addEventListener("input", function () {
-            const currentLength = textarea.value.length;
-            const remainingChars = maxLength - currentLength;
-            charCount.textContent = "Remaining characters: " + remainingChars;
-
-            if (currentLength > maxLength - 10) {
-              textarea.classList.add("warning");
-
-              setTimeout(() => {
-                textarea.classList.remove("warning");
-              }, 300);
-            }
-          });
-
-          form.addEventListener("submit", function (event) {
-            event.preventDefault();
-            if (
-              nameInput.checkValidity() &&
-              emailInput.checkValidity() &&
-              textarea.checkValidity()
-            ) {
-              errorField.value = JSON.stringify(form_errors);
-              form.submit();
-            }
-
-            if (nameInput.value.length == 0) {
-              const message = "Name field is required";
-              logError("email", message);
-            }
-
-            if (textarea.value.length == 0) {
-              const message = "Comments field is required";
-              logError("email", message);
-            }
-          });
-        });
-      </script>
-
-
       <footer>
         <h2 style="margin-top: 20vh">send a message!</h2>
         <form
           action="https://www.httpbin.org/post"
           method="post"
           autocomplete="on"
-          id="myForm"
-          novalidate
         >
           <label for="name">name*</label><br />
           <input
@@ -232,13 +130,7 @@
           /><br />
 
           <label for="email">email</label><br />
-          <input
-            type="email"
-            id="email"
-            name="email"
-            size="60"
-            pattern="[a-zA-Z0-9.*%±]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}"
-          /><br />
+          <input type="email" id="email" name="email" size="60" /><br />
 
           <label for="comment">comments*</label><br />
           <textarea
@@ -246,11 +138,10 @@
             name="comment"
             rows="4"
             cols="50"
-            maxlength="200"
+            maxlength="100"
             placeholder="Type a message here!"
             required
           ></textarea>
-          <p id="charCount">Remaining characters: 200</p>
 
           <input
             type="hidden"
@@ -261,11 +152,9 @@
 
           <input type="submit" value="submit" />
 
-          <input type="hidden" id="form-errors" name="form-errors" />
+          <output name="error" for="a b"></output>
 
-          <output name="error"></output>
-
-          <output name="info"></output>
+          <output name="info" for="a b"></output>
         </form>
       </footer>
     </main>

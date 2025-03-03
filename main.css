@@ -32,7 +32,7 @@ nav img {
 .navItem {
   color: white;
   text-decoration: none;
-  margin: 0.5em .5em;
+  margin: 0.5em 0.5em;
   padding-right: 10px;
 }
 
@@ -110,6 +110,12 @@ main {
   align-items: center;
 }
 
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .contact {
   display: flex;
   flex-direction: row;
@@ -132,114 +138,190 @@ main {
 
 h2 {
   font-size: 2.5em;
-  margin: 0;
-  margin-bottom: 3dvh;
+  margin: 3dvh, 0;
 }
 
 .portfolio {
-    display: flex;
-    width: 80dvw;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    row-gap: 2em;
-    margin-bottom: 10%;
+  display: flex;
+  width: 80dvw;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 2em;
+  margin-bottom: 10%;
 }
 
 .portfolioItem {
-    /* background-color: pink;  */
-    width:20rem; 
-    height:20rem;
-    display: flex;
-    flex-direction: column;
-    font-size: 1.5em;
-    justify-content: flex-start;
+  /* background-color: pink;  */
+  width: 20rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+  justify-content: flex-start;
 }
 
 .portfolioImage {
-    width:20rem; 
-    height:12rem;
-    border-radius: 10%;
-    border-style: solid;
-    border-color: var(--highlight-green);
-    transition: transform 1s;
+  width: 20rem;
+  height: 12rem;
+  border-radius: 10%;
+  border-style: solid;
+  border-color: var(--highlight-green);
+  transition: transform 1s;
 }
 
 .portfolioImage:hover {
-    transform: scale(1.1);
-  }
+  transform: scale(1.1);
+}
 
 .portfolioItemTitle {
-    margin: 5% 0 2% 0;
-    display: flex;
-    justify-content: space-between;
+  margin: 5% 0 2% 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .portfolioItem p {
-    font-size: large;
-    margin: 0;
+  font-size: large;
+  margin: 0;
 }
 
 .menu {
+  display: flex;
+  gap: 20px;
+}
+
+.navItem {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Hamburger menu button (hidden by default) */
+#menu-btn {
+  display: none;
+}
+
+.menu-icon {
+  display: none; /* Hide by default */
+  cursor: pointer;
+}
+
+.navicon {
+  width: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  margin-bottom: 10dvh;
+  color: var(--dark-green, green);
+  width: 40vw;
+}
+
+label {
+  font-size: 1.5rem;
+}
+
+input {
+  height: 1.5rem;
+  font-size: 1.15rem;
+  border-radius: 10px;
+  padding: 5px;
+  
+}
+
+textarea {
+  border-radius: 10px;
+  padding: 5px;
+  border: 2px solid black;
+}
+
+input[type="submit"] {
+  background-color: var(--highlight-green, green);
+  color: white;
+  border: none;
+  height: 2.25rem;
+  font-size: 1.5rem;
+  border-radius: 10px;
+}
+
+@keyframes error-flash {
+  0% { box-shadow: 0 0 5px 3px red; }
+  100% { box-shadow: none; }
+}
+
+@keyframes char-flash {
+  0% { background-color: var(--highlight-green, green); }
+  100% { background-color: white; }
+}
+
+.error-flash {
+  animation: error-flash 0.3s ease-in-out;
+}
+
+.warning {
+  animation: char-flash 0.3s ease-in-out;
+}
+
+output {
+  font-size: 1.5rem;
+  margin-top: 5vh;
+}
+
+output[name="error"] {
+  color: red;
+  font-weight: bold;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  form {
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    margin-bottom: 10dvh;
+    color: var(--dark-green, green);
+    width: 70vw;
   }
 
-  .navItem {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-  }
-
-  /* Hamburger menu button (hidden by default) */
-  #menu-btn {
+  .menu {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: var(--green);
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .menu a {
+    padding: 10px;
+    display: block;
+    text-align: center;
+    font-size: xx-large;
   }
 
   .menu-icon {
-    display: none; /* Hide by default */
-    cursor: pointer;
+    display: block; /* Show menu icon on small screens */
   }
 
-  .navicon {
-    width: 30px;
+  /* Show menu when checkbox is checked */
+  #menu-btn:checked ~ .menu {
+    display: flex;
   }
 
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .menu {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      right: 0;
-      background: var(--green);
-      padding: 10px;
-      border-radius: 5px;
-    }
-
-    .menu a {
-      padding: 10px;
-      display: block;
-      text-align: center;
-      font-size: xx-large;
-    }
-
-    .menu-icon {
-      display: block; /* Show menu icon on small screens */
-    }
-
-    /* Show menu when checkbox is checked */
-    #menu-btn:checked ~ .menu {
-      display: flex;
-    }
-
-    .menu-icon {
-        margin-right: 1rem;
-    }
-
-    .contactLogo {
-        width: 10dvw;
-        padding: 5px;
-    }
+  .menu-icon {
+    margin-right: 1rem;
   }
+
+  .contactLogo {
+    width: 10dvw;
+    padding: 5px;
+  }
+}
