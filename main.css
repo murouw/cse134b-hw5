@@ -4,6 +4,38 @@
   --green: #28794b;
 }
 
+[data-theme="light"] {
+  --color-neutral: var(--green, green);
+  --color-bg: white;
+  --color-accent: var(--dark-green, green);
+  --color-reverse-accent: white;
+  --color-fg: black;
+}
+
+[data-theme="dark"] {
+  --color-neutral: var(--green, green);
+  --color-bg: #25262b;
+  --color-accent: white;
+  --color-reverse-accent: var(--dark-green, green);
+}
+
+button {
+  all: unset; /* Resets all styles (including padding, margin, border, etc.) */
+  cursor: pointer; /* Adds a pointer cursor on hover */
+  padding: 0;
+  border: none;
+  display: inline-block;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(253deg)
+    brightness(105%) contrast(102%);
+  padding-top: 3px;
+  margin: auto;
+}
+
+#theme-icon {
+  width: 1.25em;
+  margin-top: 5px;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -12,14 +44,16 @@ body {
   font-family: "DM Sans", sans-serif;
   margin: 0;
   width: 100dvw;
-  color: var(--dark-green, green);
+  color: var(--color-accent, green);
+  background-color: var(--color-bg, white);
+  overflow-x: hidden;
 }
 
 nav {
   width: 100dvw;
   font-size: 20px;
   display: flex;
-  background-color: var(--green, green);
+  background-color: var(--color-neutral, green);
   align-items: center;
   justify-content: space-between;
 }
@@ -37,10 +71,10 @@ nav img {
 }
 
 .navItem:hover {
-  color: var(--dark-green);
+  color: var(--dark-green, green);
 }
 
-@keyframes green {
+@keyframes green-mix {
   0% {
     color: color-mix(
       in oklab,
@@ -93,7 +127,7 @@ nav img {
 }
 
 header p {
-  animation-name: green;
+  animation-name: green-mix;
   animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -116,7 +150,7 @@ footer {
   align-items: center;
 }
 
-.contact {
+.contact[data-theme="light"] {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -125,6 +159,17 @@ footer {
   flex-wrap: wrap;
   filter: invert(18%) sepia(52%) saturate(808%) hue-rotate(103deg)
     brightness(92%) contrast(104%);
+}
+
+.contact[data-theme="dark"] {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 30dvw;
+  flex-wrap: wrap;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(253deg)
+    brightness(105%) contrast(102%);
 }
 
 .contactLogo {
@@ -152,7 +197,6 @@ h2 {
 }
 
 .portfolioItem {
-  /* background-color: pink;  */
   width: 20rem;
   height: 20rem;
   display: flex;
@@ -187,13 +231,7 @@ h2 {
 
 .menu {
   display: flex;
-  gap: 20px;
-}
-
-.navItem {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
+  margin-right: 3vw;
 }
 
 /* Hamburger menu button (hidden by default) */
@@ -216,7 +254,7 @@ form {
   justify-content: center;
   text-align: left;
   margin-bottom: 10dvh;
-  color: var(--dark-green, green);
+  color: var(--color-accent, green);
   width: 40vw;
 }
 
@@ -229,18 +267,17 @@ input {
   font-size: 1.15rem;
   border-radius: 10px;
   padding: 5px;
-  
 }
 
 textarea {
   border-radius: 10px;
   padding: 5px;
-  border: 2px solid black;
+  border: 2px solid var(--color-fg);
 }
 
 input[type="submit"] {
   background-color: var(--highlight-green, green);
-  color: white;
+  color: var(--color-bg);
   border: none;
   height: 2.25rem;
   font-size: 1.5rem;
@@ -248,13 +285,21 @@ input[type="submit"] {
 }
 
 @keyframes error-flash {
-  0% { box-shadow: 0 0 5px 3px red; }
-  100% { box-shadow: none; }
+  0% {
+    box-shadow: 0 0 5px 3px red;
+  }
+  100% {
+    box-shadow: none;
+  }
 }
 
 @keyframes char-flash {
-  0% { background-color: var(--highlight-green, green); }
-  100% { background-color: white; }
+  0% {
+    background-color: var(--highlight-green, green);
+  }
+  100% {
+    background-color: white;
+  }
 }
 
 .error-flash {
@@ -285,7 +330,7 @@ output[name="error"] {
     justify-content: center;
     text-align: left;
     margin-bottom: 10dvh;
-    color: var(--dark-green, green);
+    color: var(--color-accent, green);
     width: 70vw;
   }
 
@@ -295,7 +340,7 @@ output[name="error"] {
     position: absolute;
     top: 60px;
     right: 0;
-    background: var(--green);
+    background: var(--green, green);
     padding: 10px;
     border-radius: 5px;
   }

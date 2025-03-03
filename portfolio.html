@@ -1,7 +1,7 @@
-<html>
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Murou Wang | Portfolio</title>
     <link rel="icon" href="images/small-chedda.png" type="image/x-icon" />
@@ -15,23 +15,34 @@
   </head>
 
   <body>
+    <script type="text/javascript" src="myscripts.js"></script>
     <nav>
       <a href="index.html" class="navItem">
         <picture>
-          <source srcset="images/big-chedda.png" media="(min-width: 1024px)">
+          <source srcset="images/big-chedda.png" media="(min-width: 1024px)" />
           <img src="images/small-chedda.png" alt="Mista Chedda" />
         </picture>
-        
       </a>
-    
+
       <input type="checkbox" id="menu-btn" />
       <label class="menu-icon" for="menu-btn">
-        <img class="navicon" src="images/menu.png" alt="Hamburger Menu Button" />
+        <img
+          class="navicon"
+          src="images/menu.png"
+          alt="Hamburger Menu Button"
+        />
       </label>
-    
+
       <div class="menu">
         <a class="navItem" href="media/MurouWangResume.pdf">resume</a>
         <a class="navItem" href="portfolio.html">portfolio</a>
+        <button
+          type="button"
+          data-theme-toggle
+          aria-label="Change to light theme"
+        >
+          <img id="theme-icon" src="images/sun.png" />
+        </button>
       </div>
     </nav>
 
@@ -48,7 +59,7 @@
       <div class="portfolioItem">
         <a href="https://murou3.netlify.app/"
           ><img
-          loading="lazy"
+            loading="lazy"
             class="portfolioImage"
             src="images/inception.png"
             alt="Home page of this website"
@@ -68,7 +79,7 @@
       <div class="portfolioItem">
         <a href="https://devpost.com/software/soupersaurus"
           ><img
-          loading="lazy"
+            loading="lazy"
             class="portfolioImage"
             src="images/soupasaurus.png"
             alt="Mobile game Soupasaurus"
@@ -80,15 +91,15 @@
         </div>
 
         <p>
-          A personality quiz and dinosaurus adventure game in one
-          created with friends at LA Hacks 2024.
+          A personality quiz and dinosaurus adventure game in one created with
+          friends at LA Hacks 2024.
         </p>
       </div>
 
       <div class="portfolioItem">
         <a href="https://github.com/murouw/cultivate"
           ><img
-          loading="lazy"
+            loading="lazy"
             class="portfolioImage"
             src="images/cultivate.png"
             alt="Cultivate landing page"
@@ -100,23 +111,23 @@
         </div>
 
         <p>
-          Gamified gratitude journal made with friends as part of an ACM project.
+          Gamified gratitude journal made with friends as part of an ACM
+          project.
         </p>
       </div>
 
       <div class="portfolioItem">
-        <a href="https://github.com/murouw/ersp"
-          >
+        <a href="https://github.com/murouw/ersp">
           <picture>
-            <source srcset="images/big-ersp.png" media="(min-width: 1024px)">
+            <source srcset="images/big-ersp.png" media="(min-width: 1024px)" />
             <img
-          loading="lazy"
-            class="portfolioImage"
-            src="images/ersp-small.png"
-            alt="ERSP research presentation poster"
-        />
+              loading="lazy"
+              class="portfolioImage"
+              src="images/ersp-small.png"
+              alt="ERSP research presentation poster"
+            />
           </picture>
-          </a>
+        </a>
 
         <div class="portfolioItemTitle">
           <strong>ERSP at UCSD</strong>
@@ -124,7 +135,8 @@
         </div>
 
         <p>
-          Research on LLM vulnerabilities under Professor Earlence Fernandes at UCSD. 
+          Research on LLM vulnerabilities under Professor Earlence Fernandes at
+          UCSD.
         </p>
       </div>
 

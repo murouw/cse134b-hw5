@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
 
@@ -20,7 +20,7 @@
     />
     <meta property="og:url" content="https://murou.netlify.app/" />
     <meta property="og:type" content="website" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Murou Wang</title>
     <link rel="icon" href="images/small-chedda.png" type="image/x-icon" />
@@ -31,8 +31,10 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   </head>
   <body>
+    <script type="text/javascript" src="myscripts.js"></script>
     <noscript>
       Whoops! Looks like JavaScript isn't enabled. This website is ok without
       scripts but you should definitely enable scripts for the best experience!
@@ -55,6 +57,14 @@
       <div class="menu">
         <a class="navItem" href="media/MurouWangResume.pdf">resume</a>
         <a class="navItem" href="portfolio.html">portfolio</a>
+
+        <button
+          type="button"
+          data-theme-toggle
+          aria-label="Change to light theme"
+        >
+        <img id="theme-icon" src="images/sun.png"/>
+        </button>
       </div>
     </nav>
 
@@ -81,7 +91,7 @@
         <figcaption>me, coding studiously ^</figcaption>
       </figure>
 
-      <div class="contact">
+      <div id="contact" class="contact" data-theme="light">
         <a href="https://www.linkedin.com/in/murouw/"
           ><img
             loading="lazy"
@@ -210,7 +220,6 @@
           });
         });
       </script>
-
 
       <footer>
         <h2 style="margin-top: 20vh">send a message!</h2>
