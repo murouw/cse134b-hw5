@@ -66,8 +66,12 @@
     </header>
 
     <main class="portfolio">
-      <button id="loadLocal">Load Local</button>
-      <button id="loadRemote">Load Remote</button>
+
+      <div style="display: flex; flex-direction: row; margin-bottom: 1rem;">
+        <button id="loadLocal">load local</button>
+        <button id="loadRemote">load remote</button>
+      </div>
+      
 
       <template id="portfolioItemTemplate">
         <div class="portfolioItem">
@@ -124,10 +128,10 @@
           }
 
           function loadRemote() {
-            const remoteURL = "https://api.jsonbin.io/v3/b/67d53cf48960c979a571f0d5"; // Replace with your actual JSONBin URL
+            const remoteURL = "https://api.jsonbin.io/v3/b/67d53cf48960c979a571f0d5"; 
             fetch(remoteURL, {
               headers: {
-                "X-Master-Key": "$2a$10$s9sLeGo7RFf7XmCcJikrieH5jmABJin.g6t3ZDqb.n..m/a.dPNuW", // Optional: Use if you need an API key for access
+                "X-Master-Key": "$2a$10$s9sLeGo7RFf7XmCcJikrieH5jmABJin.g6t3ZDqb.n..m/a.dPNuW",
               },
             })
               .then((response) => response.json())
@@ -150,13 +154,6 @@
           document
             .getElementById("loadRemote")
             .addEventListener("click", loadRemote);
-
-          // Render the portfolio items if data exists in localStorage
-          // if (portfolioData.length > 0) {
-          //   renderPortfolio();
-          // } else {
-          //   console.warn("No portfolio items found in localStorage.");
-          // }
         });
       </script>
     </main>

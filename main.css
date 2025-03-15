@@ -19,7 +19,7 @@
   --color-reverse-accent: var(--dark-green, green);
 }
 
-button {
+.menu button {
   all: unset; /* Resets all styles (including padding, margin, border, etc.) */
   cursor: pointer; /* Adds a pointer cursor on hover */
   padding: 0;
@@ -197,11 +197,15 @@ h2 {
 }
 
 .portfolio button {
-  height: 50px;
-  font-size: 2rem;
-  color: var(--color-accent);
-  background-color: grey;
-  margin: 10px;
+  font-size: 1rem;
+  color: white;
+  margin: 0 1rem 2rem 0;
+  padding: 10px;
+  width: 15dvw;
+  border-radius: 10px;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--highlight-green);
 }
 
 .portfolio h1 {
@@ -337,6 +341,16 @@ output[name="error"] {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+  .portfolio button {
+    width: 30dvw;
+  }
+
+  .portfolio h1 {
+    font-size: 50px;
+    align-self: center;
+    text-align: center;
+  }
+
   form {
     display: flex;
     flex-direction: column;

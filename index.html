@@ -165,7 +165,7 @@
             errorField.value = form_errors;
           }
 
-          const allowedPattern = /^[a-zA-Z0-9äöüÄÖÜ]*$/;
+          const allowedPattern = /^[a-zA-Z0-9äöüÄÖÜ" "]*$/;
           nameInput.addEventListener("input", function (event) {
             const value = nameInput.value;
             const lastChar = value.charAt(value.length - 1);
@@ -273,7 +273,7 @@
             value="True"
           /><br />
 
-          <input type="submit" value="submit" />
+          <input style="font-family: DM Sans, sans-serif; height: 2em" type="submit" id="submit" value="submit" />
 
           <input type="hidden" id="form-errors" name="form-errors" />
 
