@@ -51,7 +51,7 @@
           aria-label="Change to light theme"
           id="themeToggle"
         >
-        <img id="theme-icon" src="images/sun.png" style="margin-top: 0px;"/>
+          <img id="theme-icon" src="images/sun.png" style="margin-top: 0px" />
         </button>
       </div>
     </nav>
@@ -66,92 +66,60 @@
     </header>
 
     <main class="portfolio">
-      <div class="portfolioItem">
-        <a href="https://murou3.netlify.app/">
-          <picture>
-            <img
-              loading="lazy"
-              class="portfolioImage"
-              src="images/inception.png"
-              alt="Home page of this website"
-            /> </picture
-        ></a>
-
-        <h2>This website!</h2>
-
-        <p>
-          This website is my project for CSE 134B, although hopefully I'll be
-          using it as my actual portfolio soon :D
-        </p>
-      </div>
-
-      <div class="portfolioItem">
-        <a href="https://devpost.com/software/soupersaurus"
-          ><img
-            loading="lazy"
-            class="portfolioImage"
-            src="images/soupasaurus.png"
-            alt="Mobile game Soupasaurus"
-        /></a>
-
-        <div class="portfolioItemTitle">
-          <strong>Soupasaurus</strong>
-          <em>April 2024</em>
+      <template id="portfolioItemTemplate">
+        <div class="portfolioItem">
+          <a href="">
+            <picture>
+              <img loading="lazy" class="portfolioImage" src="" alt="" />
+            </picture>
+          </a>
+          <h2></h2>
+          <p></p>
         </div>
+      </template>
 
-        <p>
-          A personality quiz and dinosaurus adventure game in one created with
-          friends at LA Hacks 2024.
-        </p>
-      </div>
+      <div id="portfolioContainer"></div>
 
-      <div class="portfolioItem">
-        <a href="https://github.com/murouw/cultivate"
-          ><img
-            loading="lazy"
-            class="portfolioImage"
-            src="images/cultivate.png"
-            alt="Cultivate landing page"
-        /></a>
+      <h1>...And more to come!</h1>
 
-        <div class="portfolioItemTitle">
-          <strong>Cultivate</strong>
-          <em>Feb 2024</em>
-        </div>
+      <script>
+        console.log(JSON.parse(localStorage.getItem("portfolioItems")));
 
-        <p>
-          Gamified gratitude journal made with friends as part of an ACM
-          project.
-        </p>
-      </div>
+        document.addEventListener("DOMContentLoaded", () => {
+          const container = document.getElementById("portfolioContainer");
+          const template = document.getElementById("portfolioItemTemplate");
 
-      <div class="portfolioItem">
-        <a href="https://github.com/murouw/ersp">
-          <picture>
-            <source srcset="images/big-ersp.png" media="(min-width: 1024px)" />
-            <img
-              loading="lazy"
-              class="portfolioImage"
-              src="images/ersp-small.png"
-              alt="ERSP research presentation poster"
-            />
-          </picture>
-        </a>
+          // Load portfolio items from localStorage
+          const portfolioData =
+            JSON.parse(localStorage.getItem("portfolioItems")) || [];
 
-        <div class="portfolioItemTitle">
-          <strong>ERSP at UCSD</strong>
-          <em>June 2024</em>
-        </div>
+          function renderPortfolio() {
+            container.innerHTML = ""; // Clear existing items
+            portfolioData.forEach((item) => {
+              const clone = template.content.cloneNode(true);
+              const link = clone.querySelector("a");
+              const img = clone.querySelector("img");
+              const title = clone.querySelector("h2");
+              const desc = clone.querySelector("p");
 
-        <p>
-          Research on LLM vulnerabilities under Professor Earlence Fernandes at
-          UCSD.
-        </p>
-      </div>
+              link.href = item.link;
+              img.src = item.image;
+              img.alt = item.alt;
+              title.textContent = item.title;
+              desc.textContent = item.description;
 
-      <div class="portfolioItem">
-        <h1>...And more to come!</h1>
-      </div>
+              container.appendChild(clone);
+            });
+          }
+
+          // Render the portfolio items if data exists in localStorage
+          if (portfolioData.length > 0) {
+            renderPortfolio();
+          } else {
+            console.warn("No portfolio items found in localStorage.");
+          }
+        });
+      </script>
     </main>
   </body>
 </html>
