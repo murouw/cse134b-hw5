@@ -59,49 +59,44 @@ document.addEventListener("DOMContentLoaded", function () {
     updateThemeOnEl({ theme: newTheme });
 
     currentThemeSetting = newTheme;
-
-    if (newTheme === "dark") {
-      themeIcon.classList.remove("fa-sun");
-      themeIcon.classList.add("fa-moon");
-    } else {
-      themeIcon.classList.remove("fa-moon");
-      themeIcon.classList.add("fa-sun");
-    }
   });
 });
 
 const items = [
   {
-  link: "https://murou5.netlify.app/",
-  image: "images/inception.png",
-  alt: "Home page of this website",
-  title: "This website!",
-  description: "This website is my project for CSE 134B, although hopefully I'll be using it as my actual portfolio soon :D"
-},
-{
-  link: "https://devpost.com/software/soupersaurus",
-  image: "images/soupasaurus.png",
-  alt: "Landing page of game with chef dinosaur character",
-  title: "Soupasaurus",
-  description: "A personality quiz and dinosaurus adventure game in one created with friends at LA Hacks 2024."
-},
-{
-  link: "https://github.com/murouw/cultivate",
-  image: "images/cultivate.png",
-  alt: "Cultivate landing page",
-  title: "Cultivate",
-  description: "Gamified gratitude journal made with friends as part of an ACM project."
-},
-{
-  link: "https://github.com/murouw/ersp",
-  image: "images/ersp-small.png",
-  alt: "ERSP research presentation poster",
-  title: "ERSP at UCSD",
-  description: "Research on LLM vulnerabilities under Professor Earlence Fernandes at UCSD."
-}
-]
+    link: "https://murou5.netlify.app/",
+    image: "images/inception.png",
+    alt: "Home page of this website",
+    title: "This website!",
+    description:
+      "This website is my project for CSE 134B, although hopefully I'll be using it as my actual portfolio soon :D",
+  },
+  {
+    link: "https://devpost.com/software/soupersaurus",
+    image: "images/soupasaurus.png",
+    alt: "Landing page of game with chef dinosaur character",
+    title: "Soupasaurus",
+    description:
+      "A personality quiz and dinosaurus adventure game in one created with friends at LA Hacks 2024.",
+  },
+  {
+    link: "https://github.com/murouw/cultivate",
+    image: "images/cultivate.png",
+    alt: "Cultivate landing page",
+    title: "Cultivate",
+    description:
+      "Gamified gratitude journal made with friends as part of an ACM project.",
+  },
+  {
+    link: "https://github.com/murouw/ersp",
+    image: "images/ersp-small.png",
+    alt: "ERSP research presentation poster",
+    title: "ERSP at UCSD",
+    description:
+      "Research on LLM vulnerabilities under Professor Earlence Fernandes at UCSD.",
+  }
+];
 
-localStorage.setItem("portfolioItems", JSON.stringify(items));
 if (!localStorage.getItem("portfolioItems")) {
   localStorage.setItem("portfolioItems", JSON.stringify(items));
 }

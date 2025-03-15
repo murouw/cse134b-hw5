@@ -196,6 +196,14 @@ h2 {
   row-gap: 2em;
 }
 
+.portfolio button {
+  height: 50px;
+  font-size: 2rem;
+  color: var(--color-accent);
+  background-color: grey;
+  margin: 10px;
+}
+
 .portfolio h1 {
   font-size: 72px;
   margin: 1rem 0;
