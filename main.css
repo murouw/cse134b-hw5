@@ -56,6 +56,7 @@ nav {
   background-color: var(--color-neutral, green);
   align-items: center;
   justify-content: space-between;
+  height: 4em;
 }
 
 nav img {
@@ -196,6 +197,11 @@ h2 {
   margin-bottom: 10%;
 }
 
+.portfolio h2 {
+  font-size: x-large;
+  margin: .5rem 0;
+}
+
 .portfolioItem {
   width: 20rem;
   height: 20rem;
@@ -216,12 +222,6 @@ h2 {
 
 .portfolioImage:hover {
   transform: scale(1.1);
-}
-
-.portfolioItemTitle {
-  margin: 5% 0 2% 0;
-  display: flex;
-  justify-content: space-between;
 }
 
 .portfolioItem p {
