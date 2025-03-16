@@ -52,7 +52,7 @@
     <div class="navContainer">
       <nav>
         <a href="index.html" class="navItem">
-          <img id='logo' src="images/logo.png" alt="MW" />
+          <img id="logo" src="images/logo.png" alt="MW" />
         </a>
 
         <input type="checkbox" id="menu-btn" />
@@ -143,7 +143,7 @@
 
         <div class="typingContainer">
           <a
-            style="text-decoration: none;"
+            style="text-decoration: none"
             href=""
             class="typewrite"
             data-period="2000"
@@ -227,7 +227,7 @@
             errorField.value = form_errors;
           }
 
-          const allowedPattern = /^[a-zA-Z0-9äöüÄÖÜ" "]*$/;
+          const allowedPattern = /^[a-zA-Z0-9äöüÄÖÜ]*$/;
           nameInput.addEventListener("input", function (event) {
             const value = nameInput.value;
             const lastChar = value.charAt(value.length - 1);
@@ -289,7 +289,7 @@
       </script>
 
       <footer>
-        <h2>send a message!</h2>
+        <h2 style="margin-top: 20vh">send a message!</h2>
         <form
           action="https://www.httpbin.org/post"
           method="post"
