@@ -10,6 +10,7 @@
   --color-accent: var(--dark-green, green);
   --color-reverse-accent: white;
   --color-fg: black;
+  --color-typing: var(--dark-green, green);
 }
 
 [data-theme="dark"] {
@@ -17,6 +18,22 @@
   --color-bg: #25262b;
   --color-accent: white;
   --color-reverse-accent: var(--dark-green, green);
+  --color-typing: var(--highlight-green, green);
+}
+
+.wrap {
+  color: var(--color-typing);
+  border-right: 0.08em solid var(--color-typing);
+  text-decoration: none;
+  font-size: 3rem;
+  height: 3rem;
+  font-family: 'Courier New', Courier, monospace;
+  text-decoration: none;
+}
+
+.typingContainer {
+  height: 3rem;
+  margin-bottom: 2rem;
 }
 
 .menu button {
