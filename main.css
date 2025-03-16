@@ -49,11 +49,17 @@ body {
   overflow-x: hidden;
 }
 
-nav {
+.navContainer {
   width: 100dvw;
+  background-color: var(--color-neutral, green);
+
+}
+
+nav {
+  width: 100%;
   font-size: 1.5rem;
   display: flex;
-  background-color: var(--color-neutral, green);
+  
   align-items: center;
   justify-content: space-between;
   height: 3em;
@@ -151,24 +157,20 @@ footer {
   align-items: center;
 }
 
-.contact[data-theme="light"] {
+.contact {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  width: 30dvw;
   flex-wrap: wrap;
+}
+
+.contact[data-theme="light"] {
   filter: invert(18%) sepia(52%) saturate(808%) hue-rotate(103deg)
     brightness(92%) contrast(104%);
 }
 
 .contact[data-theme="dark"] {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  width: 30dvw;
-  flex-wrap: wrap;
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(253deg)
     brightness(105%) contrast(102%);
 }
@@ -248,7 +250,7 @@ h2 {
 
 .menu {
   display: flex;
-  margin-right: 3vw;
+  margin-right: 2vw;
 }
 
 /* Hamburger menu button (hidden by default) */
@@ -341,6 +343,15 @@ output[name="error"] {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+
+  nav {
+    width: 97%;
+  }
+
+  .menu {
+    margin-right: 0;
+  }
+
   .portfolio button {
     width: 30dvw;
   }
@@ -376,7 +387,7 @@ output[name="error"] {
     padding: .5rem;
     display: block;
     text-align: center;
-    font-size: xx-large;
+    font-size: x-large;
   }
 
   .menu-icon {
@@ -386,10 +397,6 @@ output[name="error"] {
   /* Show menu when checkbox is checked */
   #menu-btn:checked ~ .menu {
     display: flex;
-  }
-
-  .menu-icon {
-    margin-right: 1rem;
   }
 
   .contactLogo {

@@ -31,7 +31,10 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
   </head>
   <body>
     <script type="text/javascript" src="myscripts.js"></script>
@@ -40,61 +43,50 @@
       scripts but you should definitely enable scripts for the best experience!
 
       <style>
-        #themeToggle {display:none;}
+        #themeToggle {
+          display: none;
+        }
       </style>
     </noscript>
 
-    <nav>
-      <a href="index.html" class="navItem">
-        <img src="images/small-chedda.png" alt="Mista Chedda" />
-      </a>
+    <div class="navContainer">
+      <nav>
+        <a href="index.html" class="navItem">
+          <img src="images/small-chedda.png" alt="Mista Chedda" />
+        </a>
 
-      <input type="checkbox" id="menu-btn" />
-      <label class="menu-icon" for="menu-btn">
-        <img
-          class="navicon"
-          src="images/menu.png"
-          alt="Hamburger Menu Button"
-        />
-      </label>
+        <input type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn">
+          <img
+            class="navicon"
+            src="images/menu.png"
+            alt="Hamburger Menu Button"
+          />
+        </label>
 
-      <div class="menu">
-        <a class="navItem" href="media/MurouWangResume.pdf">resume</a>
-        <a class="navItem" href="portfolio.html">portfolio</a>
+        <div class="menu">
+          <a class="navItem" href="media/MurouWangResume.pdf">resume</a>
+          <a class="navItem" href="portfolio.html">portfolio</a>
 
-        <button
-          type="button"
-          data-theme-toggle
-          aria-label="Change to light theme"
-          id="themeToggle"
-        >
-        <img id="theme-icon" src="images/sun.png"/>
-        </button>
-      </div>
-    </nav>
+          <button
+            type="button"
+            data-theme-toggle
+            aria-label="Change to light theme"
+            id="themeToggle"
+          >
+            <img id="theme-icon" src="images/sun.png" />
+          </button>
+        </div>
+      </nav>
+    </div>
 
-    <header>
-      <hgroup style="text-align: center">
+    <header style="justify-content: center;">
+      <hgroup style="text-align: center;">
         <h1 style="font-size: 72px; margin-bottom: 0">murou wang</h1>
         <p style="font-size: 36px; margin-top: 0.2em">
           computer science student at UCSD
         </p>
       </hgroup>
-    </header>
-
-    <main>
-      <figure>
-        <picture>
-          <source srcset="images/small-cat.png" media="(max-width: 600px)" />
-          <img
-            src="images/cat.gif"
-            loading="lazy"
-            alt="Tuxedo cat typing furiously on Mac"
-          />
-        </picture>
-
-        <figcaption>me, coding studiously ^</figcaption>
-      </figure>
 
       <div id="contact" class="contact" data-theme="light">
         <a href="https://www.linkedin.com/in/murouw/"
@@ -126,6 +118,11 @@
             alt="murouaiwang@gmail.com"
         /></a>
       </div>
+    </header>
+
+    <main>
+
+      
 
       <script>
         document.addEventListener("DOMContentLoaded", function () {

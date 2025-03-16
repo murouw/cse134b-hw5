@@ -27,34 +27,36 @@
       </style>
     </noscript>
 
-    <nav>
-      <a href="index.html" class="navItem">
-        <img src="images/small-chedda.png" alt="Mista Chedda" />
-      </a>
+    <div class="navContainer">
+      <nav>
+        <a href="index.html" class="navItem">
+          <img src="images/small-chedda.png" alt="Mista Chedda" />
+        </a>
 
-      <input type="checkbox" id="menu-btn" />
-      <label class="menu-icon" for="menu-btn">
-        <img
-          class="navicon"
-          src="images/menu.png"
-          alt="Hamburger Menu Button"
-        />
-      </label>
+        <input type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn">
+          <img
+            class="navicon"
+            src="images/menu.png"
+            alt="Hamburger Menu Button"
+          />
+        </label>
 
-      <div class="menu">
-        <a class="navItem" href="media/MurouWangResume.pdf">resume</a>
-        <a class="navItem" href="portfolio.html">portfolio</a>
+        <div class="menu">
+          <a class="navItem" href="media/MurouWangResume.pdf">resume</a>
+          <a class="navItem" href="portfolio.html">portfolio</a>
 
-        <button
-          type="button"
-          data-theme-toggle
-          aria-label="Change to light theme"
-          id="themeToggle"
-        >
-          <img id="theme-icon" src="images/sun.png" style="margin-top: 0px" />
-        </button>
-      </div>
-    </nav>
+          <button
+            type="button"
+            data-theme-toggle
+            aria-label="Change to light theme"
+            id="themeToggle"
+          >
+            <img id="theme-icon" src="images/sun.png" style="margin-top: 0px" />
+          </button>
+        </div>
+      </nav>
+    </div>
 
     <header>
       <hgroup style="text-align: center">
@@ -66,12 +68,10 @@
     </header>
 
     <main class="portfolio">
-
-      <div style="display: flex; flex-direction: row; margin-bottom: 1rem;">
+      <div style="display: flex; flex-direction: row; margin-bottom: 1rem">
         <button id="loadLocal">load local</button>
         <button id="loadRemote">load remote</button>
       </div>
-      
 
       <template id="portfolioItemTemplate">
         <div class="portfolioItem">
@@ -90,7 +90,6 @@
       <h1>...and more to come!</h1>
 
       <script>
-
         document.addEventListener("DOMContentLoaded", () => {
           const container = document.getElementById("portfolioContainer");
           const template = document.getElementById("portfolioItemTemplate");
@@ -115,7 +114,7 @@
           }
 
           function loadLocal() {
-            console.log('local data button pushed');
+            console.log("local data button pushed");
             const portfolioData =
               JSON.parse(localStorage.getItem("portfolioItems")) || [];
 
@@ -128,10 +127,12 @@
           }
 
           function loadRemote() {
-            const remoteURL = "https://api.jsonbin.io/v3/b/67d53cf48960c979a571f0d5"; 
+            const remoteURL =
+              "https://api.jsonbin.io/v3/b/67d53cf48960c979a571f0d5";
             fetch(remoteURL, {
               headers: {
-                "X-Master-Key": "$2a$10$s9sLeGo7RFf7XmCcJikrieH5jmABJin.g6t3ZDqb.n..m/a.dPNuW",
+                "X-Master-Key":
+                  "$2a$10$s9sLeGo7RFf7XmCcJikrieH5jmABJin.g6t3ZDqb.n..m/a.dPNuW",
               },
             })
               .then((response) => response.json())
