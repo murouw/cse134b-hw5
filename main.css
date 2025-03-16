@@ -20,8 +20,8 @@
 }
 
 .menu button {
-  all: unset; /* Resets all styles (including padding, margin, border, etc.) */
-  cursor: pointer; /* Adds a pointer cursor on hover */
+  all: unset;
+  cursor: pointer; 
   padding: 0;
   border: none;
   display: inline-block;
@@ -51,12 +51,12 @@ body {
 
 nav {
   width: 100dvw;
-  font-size: 20px;
+  font-size: 1.5rem;
   display: flex;
   background-color: var(--color-neutral, green);
   align-items: center;
   justify-content: space-between;
-  height: 4em;
+  height: 3em;
 }
 
 nav img {
@@ -68,7 +68,7 @@ nav img {
   color: white;
   text-decoration: none;
   margin: 0.5em 0.5em;
-  padding-right: 10px;
+  padding-right: 0.5em;
 }
 
 .navItem:hover {
@@ -200,7 +200,7 @@ h2 {
   font-size: 1rem;
   color: white;
   margin: 0 1rem 2rem 0;
-  padding: 10px;
+  padding: .5em;
   width: 15dvw;
   border-radius: 10px;
   border: none;
@@ -262,7 +262,7 @@ h2 {
 }
 
 .navicon {
-  width: 30px;
+  width: 2rem;
 }
 
 form {
@@ -283,12 +283,12 @@ input {
   height: 1.5rem;
   font-size: 1.15rem;
   border-radius: 10px;
-  padding: 5px;
+  padding: .25rem;
 }
 
 textarea {
   border-radius: 10px;
-  padding: 5px;
+  padding: .5rem;
   border: 2px solid var(--color-fg);
 }
 
@@ -365,15 +365,15 @@ output[name="error"] {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 3rem;
     right: 0;
     background: var(--green, green);
-    padding: 10px;
+    padding: 1rem;
     border-radius: 5px;
   }
 
   .menu a {
-    padding: 10px;
+    padding: .5rem;
     display: block;
     text-align: center;
     font-size: xx-large;
@@ -394,6 +394,6 @@ output[name="error"] {
 
   .contactLogo {
     width: 10dvw;
-    padding: 5px;
+    padding: .5rem;
   }
 }
