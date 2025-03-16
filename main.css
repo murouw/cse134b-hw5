@@ -151,6 +151,24 @@ main {
   align-items: center;
 }
 
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90dvw;
+  height: 90vh;
+  align-self: center;
+  justify-content: center;
+}
+
+span.spacer:first-child {
+  flex: 1 1 30% ;
+}
+
+span.spacer:last-child {
+  flex: 1 1 70% ;
+}
+
 footer {
   display: flex;
   flex-direction: column;
@@ -163,6 +181,7 @@ footer {
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
+  width: 30dvw;
 }
 
 .contact[data-theme="light"] {
@@ -399,8 +418,12 @@ output[name="error"] {
     display: flex;
   }
 
+  .contact {
+    width: 60dvw;
+  }
+
   .contactLogo {
-    width: 10dvw;
+    width: 5em;
     padding: .5rem;
   }
 }
