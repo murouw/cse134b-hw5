@@ -81,57 +81,7 @@ nav img {
   color: var(--dark-green, green);
 }
 
-@keyframes green-mix {
-  0% {
-    color: color-mix(
-      in oklab,
-      var(--dark-green, green) 5%,
-      var(--highlight-green, white)
-    );
-  }
-  10% {
-    color: color-mix(
-      in oklab,
-      var(--dark-green, green) 10%,
-      var(--highlight-green, white)
-    );
-  }
-  25% {
-    color: color-mix(
-      in oklab,
-      var(--dark-green, green) 25%,
-      var(--highlight-green, white)
-    );
-  }
-  35% {
-    color: color-mix(
-      in oklab,
-      var(--dark-green, green) 35%,
-      var(--highlight-green, white)
-    );
-  }
-  50% {
-    color: color-mix(
-      in oklab,
-      var(--dark-green, green) 50%,
-      var(--highlight-green, white)
-    );
-  }
-  75% {
-    color: color-mix(
-      in oklab,
-      var(--dark-green, green) 75%,
-      var(--highlight-green, white)
-    );
-  }
-  100% {
-    color: color-mix(
-      in oklab,
-      var(--dark-green, green) 100%,
-      var(--highlight-green, white)
-    );
-  }
-}
+
 
 header p {
   animation-name: green-mix;
@@ -139,10 +89,6 @@ header p {
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-timing-function: linear;
-}
-
-hgroup:has(h1) {
-  font-size: 72 px;
 }
 
 main {
@@ -155,10 +101,13 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90dvw;
-  height: 90vh;
   align-self: center;
   justify-content: center;
+}
+
+.headerHome {
+  width: 90dvw;
+  height: 90vh;
 }
 
 span.spacer:first-child {
@@ -230,7 +179,7 @@ h2 {
 }
 
 .portfolio h1 {
-  font-size: 72px;
+  font-size: 3rem;
   margin: 1rem 0;
 }
 
